@@ -38,5 +38,67 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
     "accent-img": "http://localhost:9000/img/accent.png",
   },
 };
+//nav links//
+const navLinks = document.querySelectorAll('header nav a')
+const navLinkTexts = Object.values(siteContent.nav)
+navLinks.forEach((link,idx)=> {
+    link.textContent = navLinkTexts[idx]
+    link.classList.add('italic')
+}) 
+
+
+//cta//
+  const ctaVar = document.querySelector('.cta h1')  // you can say just 'h1' since there's only one h1
+  ctaVar.textContent = siteContent.cta['h1']
+  
+  // or you can do it without declaring the variable
+document.querySelector('.cta button').textContent = siteContent.cta.button
+
+
+// top content//
+const topContent = document.querySelector('.top-content')
+topContent.children[0].children[0].textContent = siteContent['main-content']['features-h4']
+topContent.children[0].children[1].textContent = siteContent['main-content']['features-content']
+topContent.children[1].children[0].textContent = siteContent['main-content']['about-h4']
+topContent.children[1].children[1].textContent = siteContent['main-content']['about-content']
+
+//bottom content//
+const bottomContent = document.querySelector('.bottom-content')
+bottomContent.children[0].children[0].textContent = siteContent['main-content']['services-h4']
+bottomContent.children[0].children[1].textContent = siteContent['main-content']['services-content']
+bottomContent.children[1].children[0].textContent = siteContent['main-content']['product-h4']
+bottomContent.children[1].children[1].textContent = siteContent['main-content']['product-content']
+bottomContent.children[2].children[0].textContent = siteContent['main-content']['vision-h4']
+bottomContent.children[2].children[1].textContent = siteContent['main-content']['vision-content']
+
+//contact//
+const contact = document.querySelector('section.contact')
+contact.children[0].textContent = siteContent.contact['contact-h4']
+contact.children[1].textContent = siteContent.contact['address']
+contact.children[2].textContent = siteContent.contact['phone']
+contact.children[3].textContent = siteContent.contact['email']
+// another way to write this//
+//contact.querySelector('h4').textContent = siteContent.contact['contact-h4']//
+//contact.querySelector('p:nth-of-type(1)').textContent = siteContent.contact['contact-h4']//
+//contact.querySelector('p:nth-of-type(2)').textContent = siteContent.contact['contact-h4']//
+//contact.querySelector('p:nth-of-type(3)').textContent = siteContent.contact['contact-h4']//
+
+//Images//  
+const logoImg = document.querySelector('#logo-img')
+logoImg.src = "http://localhost:9000/img/logo.png"
+
+const ctaImg = document.querySelector('#cta-img')
+ctaImg.src = "http://localhost:9000/img/cta.png"
+
+const accentImg = document.querySelector('#middle-img')
+accentImg.src = "http://localhost:9000/img/accent.png"
+
+//footer//
+const footerLink = document.querySelector('footer a')
+footerLink.textContent = 'Copyright Great Idea! 2021'
+footerLink.classList.add('bold')
+
 
 console.log('project wired!')
+
+
